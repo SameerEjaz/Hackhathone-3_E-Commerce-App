@@ -32,10 +32,10 @@ export async function createCheckoutSession(
   process.env.NODE_ENV === "production"
     ? process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
-      : "https://t-comforty2.vercel.app/" // Fallback URL
+      : "https://furnio-kappa.vercel.app/" 
     : `${process.env.NEXT_PUBLIC_BASE_URL}`
 
-    const successUrl = `${baseUrl.replace("https://", "http://")}/Success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
+    const successUrl = `${baseUrl.replace("https://", "http://")}/Success?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber} `;
 
     const cancelUrl = `${baseUrl.replace("https://", "http://")}/Cancel?session_id={CHECKOUT_SESSION_ID}&orderNumber=${metadata.orderNumber}`;
 
